@@ -29,8 +29,20 @@ function playARound(playerChoice, computerChoice) {
 
 
     //Return a string with a result
-    //TODO
-    return playerChoice + '  vs ' + computerChoice
+    let result
+    switch (whoWon(playerChoice, computerChoice)) {
+        case 0:
+            result = 'It\'s a tie.'
+            break;
+        case 1:
+            result = 'You won!'
+            break;
+        case 2:
+            result = 'You lost.'
+            break;
+    }
+
+    return result
 
 }
 
