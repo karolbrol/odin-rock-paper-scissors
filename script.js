@@ -64,5 +64,8 @@ function whoWon(choice1,choice2){
 }
 
 //Function that plays 5 rounds of the game, prompting for user choice and console.logging the result
-//TODO function game()
+function game() {
+    for (let gamesCount = 1; gamesCount <=5 ; gamesCount++)
+    console.log(`Round ${gamesCount}`)
+}
 
