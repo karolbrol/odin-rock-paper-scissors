@@ -1,4 +1,5 @@
 
+
 //Get choice from computer
 function getComputerChoice() {
     let moves = ['Rock', 'Paper', 'Scissors']
@@ -7,7 +8,7 @@ function getComputerChoice() {
     return moves[choice]
 }
 
-//Play a round function -case insensitive, returning string with result eg. "You Lose! Paper beats Rock"
+//Play a round function -case insensitive, returning string with result (1 - player won, 2 - computer won, 0 - tie)
 //Return null if invalid parameters
 function playARound(playerChoice, computerChoice) {
     //Check if parameters are valid
@@ -27,19 +28,19 @@ function playARound(playerChoice, computerChoice) {
         return null;
     }
 
+    
 
-    //Return a string with a result
-    let result
-    switch (whoWon(playerChoice, computerChoice)) {
-        case 0:
-            result = 'It\'s a tie.'
-            break;
-        case 1:
-            result = 'You won!'
-            break;
-        case 2:
-            result = 'You lost.'
-            break;
+    //Return 1 - player won, 2 - computer won, 0 - tie
+    let result = whoWon(playerChoice, computerChoice)
+    console.log(`${playerChoice} vs ${computerChoice}`)
+    if (result === 1) {
+        console.log('Win')
+    }
+    else if (result === 2) {
+        console.log('Loose')
+    }
+    else {
+        console.log('Tie')
     }
 
     return result
@@ -65,7 +66,37 @@ function whoWon(choice1,choice2){
 
 //Function that plays 5 rounds of the game, prompting for user choice and console.logging the result
 function game() {
-    for (let gamesCount = 1; gamesCount <=5 ; gamesCount++)
-    console.log(`Round ${gamesCount}`)
+    //declare score variables
+    let playerScore = 0
+    let computerScore = 0
+    
+    let yourChoice
+
+    for (let gamesCount = 1; gamesCount <=5 ; gamesCount++) {
+        console.log(`  Round ${gamesCount}`)
+
+        yourChoice = prompt('Whats\'s Your choice?')
+        switch (playARound(yourChoice, getComputerChoice())) {
+        case 1 : playerScore++; break;
+        case 2 : computerScore++; break;
+        case null:
+            console.log('Invalid choice')
+            gamesCount--
+            break;
+        }
+    }
+
+    //Final result
+    console.log(`Result: ${playerScore} - ${computerScore}`)
+    if (playerScore === computerScore) {
+        console.log('It\'s a tie.')
+    }
+    else if (playerScore > computerScore) {
+        console.log('You won!')
+    }
+    else {
+        console.log('You lost.')
+    }
+
 }
 
