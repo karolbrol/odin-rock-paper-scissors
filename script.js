@@ -27,10 +27,28 @@ function playARound(playerChoice, computerChoice) {
         return null;
     }
 
+
     //Return a string with a result
     //TODO
     return playerChoice + '  vs ' + computerChoice
 
+}
+
+function whoWon(choice1,choice2){
+    //returns:
+    //  - 1 if choice1 wins
+    //  - 2 if choice2 wins
+    //  - 0 if its a tie
+    if (choice1 === choice2) return 0
+    //check if choice1 won
+    let winCombinations = ['Rock Scissors', 'Paper Rock', 'Scissors Paper']
+    let consideredCombination =`${choice1} ${choice2}`
+    if (winCombinations.includes(consideredCombination)) {
+        return 1
+    }
+    else {
+        return 2
+    }
 }
 
 //Function that plays 5 rounds of the game, prompting for user choice and console.logging the result
