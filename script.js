@@ -100,3 +100,9 @@ function game() {
 
 }
 
+//Handle buttons
+const rpsContainer = document.querySelector('#rps-container');
+rpsContainer.addEventListener('click', (event) => {
+    console.log(event.target.value);
+});
+
