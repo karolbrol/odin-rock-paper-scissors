@@ -28,6 +28,45 @@ body {
     flex: 0 1 35em;
 }
 
+.game-container button {
+    background-color: orange;
+    border: .2rem solid orange;
+    border-radius: .5rem;
+    color: black;
+}
+.game-container button:hover,
+.game-container button:active {
+    color: orange;
+    font-weight: bold;
+    background-color: transparent;
+}
+
+.round-count {
+    color: rgb(223, 189, 223);
+    font-weight: bold;
+}
+
+.score {
+    background-color: rgb(218, 162, 218);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .2em .5em;
+    border-radius: .5rem;
+    flex: 0 1 4rem;
+}
+
+.round-count,
+.reset-btn {
+    padding: .2em .5em;
+    flex: 0 3 5rem;
+}
+
+.top-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
 .rps-display {
     min-height: 3.5em;
     background-color: rgb(218, 162, 218);
@@ -50,15 +89,4 @@ body {
     padding: .2em .5em;
     font-size: 1.5rem;
     flex: 1 0 6em;
-    background-color: orange;
-    border: .2em solid orange;
-    border-radius: .5em;
-    color: black;
-}
-
-.rps-btn:hover,
-.rps-btn:active {
-    color: orange;
-    font-weight: bold;
-    background-color: transparent;
 }
