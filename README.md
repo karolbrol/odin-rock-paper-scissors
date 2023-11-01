@@ -1,6 +1,7 @@
 # odin-rock-paper-scissors
-Console based Rock, Paper, Scissors game
+Rock, Paper, Scissors game
 
-It's a simple browser console game written in JavaScript. To play simply type 'game()' in browsers console.
-It prompts the user for a choice, if the user doesnt type 'Rock', 'Paper' or 'Scissors' it reprompts for a correct choice.
-THe game goes for a 5 rounds keeping score and tells the user who won, and what the sore is, by the end.
+Previous version of this game was entirely console based. This version has a simple UI which let's the user play using on-screen buttons.
+The match goes for 5 rounds. The user can either choose one of the moves, or reset the score and start over.
+
+This project helped me get a little more comfortable manipulating DOM elements.
