@@ -65,44 +65,45 @@ function whoWon(choice1,choice2){
 }
 
 //Function that plays 5 rounds of the game, prompting for user choice and console.logging the result
-function game() {
-    //declare score variables
-    let playerScore = 0
-    let computerScore = 0
+// function game() {
+//     //declare score variables
+//     let playerScore = 0
+//     let computerScore = 0
     
-    let yourChoice
+//     let yourChoice
 
-    for (let gamesCount = 1; gamesCount <=5 ; gamesCount++) {
-        console.log(`  Round ${gamesCount}`)
+//     for (let gamesCount = 1; gamesCount <=5 ; gamesCount++) {
+//         console.log(`  Round ${gamesCount}`)
 
-        yourChoice = prompt('Whats\'s Your choice?')
-        switch (playARound(yourChoice, getComputerChoice())) {
-        case 1 : playerScore++; break;
-        case 2 : computerScore++; break;
-        case null:
-            console.log('Invalid choice')
-            gamesCount--
-            break;
-        }
-    }
+//         yourChoice = prompt('Whats\'s Your choice?')
+//         switch (playARound(yourChoice, getComputerChoice())) {
+//         case 1 : playerScore++; break;
+//         case 2 : computerScore++; break;
+//         case null:
+//             console.log('Invalid choice')
+//             gamesCount--
+//             break;
+//         }
+//     }
 
-    //Final result
-    console.log(`Result: ${playerScore} - ${computerScore}`)
-    if (playerScore === computerScore) {
-        console.log('It\'s a tie.')
-    }
-    else if (playerScore > computerScore) {
-        console.log('You won!')
-    }
-    else {
-        console.log('You lost.')
-    }
+//     //Final result
+//     console.log(`Result: ${playerScore} - ${computerScore}`)
+//     if (playerScore === computerScore) {
+//         console.log('It\'s a tie.')
+//     }
+//     else if (playerScore > computerScore) {
+//         console.log('You won!')
+//     }
+//     else {
+//         console.log('You lost.')
+//     }
 
-}
+// }
 
 //Handle buttons
 const rpsContainer = document.querySelector('#rps-container');
 rpsContainer.addEventListener('click', (event) => {
-    console.log(event.target.value);
+    const yourChoice = event.target.value;
+    playARound(yourChoice, getComputerChoice())
 });
 
