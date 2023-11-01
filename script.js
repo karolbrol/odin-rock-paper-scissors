@@ -31,19 +31,25 @@ function playARound(playerChoice, computerChoice) {
     
 
     //Return 1 - player won, 2 - computer won, 0 - tie
-    let result = whoWon(playerChoice, computerChoice)
-    console.log(`${playerChoice} vs ${computerChoice}`)
-    if (result === 1) {
-        console.log('Win')
-    }
-    else if (result === 2) {
-        console.log('Loose')
-    }
-    else {
-        console.log('Tie')
+    let result = whoWon(playerChoice, computerChoice);
+
+    //Write result to display
+    const display1 = document.querySelector('#rps-display > .line1');
+    const display2 = document.querySelector('#rps-display > .line2');
+    display1.textContent = `${playerChoice} vs ${computerChoice}`;
+    switch (result) {
+        case 1:
+            display2.textContent = 'Win'
+            break;
+        case 2:
+            display2.textContent = 'Loose'
+            break;
+        case 0:
+            display2.textContent = 'Tie'
+            break;
     }
 
-    return result
+    return result;
 
 }
 

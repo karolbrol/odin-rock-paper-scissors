@@ -29,11 +29,12 @@ body {
 }
 
 .rps-display {
-    min-height: 3em;
+    min-height: 3.5em;
     background-color: rgb(218, 162, 218);
     border-radius: 1em;
-    padding: .5em;
+    padding: .3em;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 1.3rem;
