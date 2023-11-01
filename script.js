@@ -101,9 +101,9 @@ function whoWon(choice1,choice2){
 // }
 
 //Handle buttons
-const rpsContainer = document.querySelector('#rps-container');
-rpsContainer.addEventListener('click', (event) => {
+const btnContainer = document.querySelector('#btn-container');
+btnContainer.addEventListener('click', (event) => {
     const yourChoice = event.target.value;
-    playARound(yourChoice, getComputerChoice())
+    playARound(yourChoice, getComputerChoice());
 });
 
