@@ -49,6 +49,18 @@ function playARound(playerChoice, computerChoice) {
             break;
     }
 
+    //Update round count
+    const roundCounter = document.querySelector('#round-count')
+    let roundCount = +roundCounter.textContent.slice(0,1);
+    //Handle match end
+    if (roundCount >= 5) {
+        //END
+    }
+    else {
+        roundCount++;
+        roundCounter.textContent = roundCount + ' / 5'
+    }
+
     return result;
 
 }
